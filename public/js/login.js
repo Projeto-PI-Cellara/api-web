@@ -1,38 +1,26 @@
 function login() {
-    const email = ipt_email.value
-    const senha = ipt_senha.value
+    let emailLogin = ipt_email_login.value;
+    let senhaLogin = ipt_senha_login.value;
 
-    const usuariosCadastrados = JSON.parse(sessionStorage.getItem("usuariosCadastrados")) || []
+    let erro = false;
 
-    let erro = false
-    if (email == "" || !email.includes("@")) {
-        alert("E-mail inválido! O e-mail deve conter pelo menos um '@'.")
-        erro = true
-    }else if(senha == ""){
-        alert("A senha está vazia")
-        erro = true
+    if (emailLogin == "" || !emailLogin.includes("@")) {
+        alert("E-mail inválido! O e-mail deve conter pelo menos um '@'.");
+        erro = true;
+    } else if (senhaLogin == "") {
+        alert("A senha está vazia");
+        erro = true;
     }
 
     if (!erro) {
-        let usuarioLogado
+        let emailMock = "fernanda@sptech.school";
+        let senhaMock = "123456789";
 
-        let contador = 0 // Esse contador vai percorrer toda a lista com os objetos(usuario)
-        while (contador < usuariosCadastrados.length && !usuarioLogado) {
-            const usuario = usuariosCadastrados[contador]
-
-            if (usuario.email == email && usuario.senha == senha) {
-                usuarioLogado = usuario
-            }
-
-            contador++
-        }
-
-        if (usuarioLogado) {
-            alert("Login realizado com sucesso!")
-            sessionStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado))
-            window.location.href = "dashboard.html"
-        } else if (!erro) {
-            alert("E-mail ou senha incorretos.")
+        if (emailLogin == emailMock && senhaLogin == senhaMock) {
+            alert("Login realizado com sucesso!");
+            window.location.href = "dashboard.html";
+        } else {
+            alert("E-mail ou senha incorretos.");
         }
     }
 }

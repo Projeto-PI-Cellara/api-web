@@ -19,38 +19,49 @@
             <div id="data_hora_atual"></div>
         </div>
     </div>
-    <div style="display: flex; flex-direction: column;">
-        <div style="display: flex; gap: 10px;">
-            <div style="width: 100%; background-color: #9696df;">
-                <h3>Variação da irradiância entre o melhor e o pior setor:</h3>
-                <div id="kpi_razao_diferenca_irradiancia"></div>
+    <div style="display: flex;">
+        <div style="width: 33.33%; display: flex; margin: 10px; background-color: #9696df;">
+            <div style="width: 60%;">
+                <h3>Diferença de irradiância entre setores</h3>
+                <h2>174 W/m²</h2>
+                <h3>Menor irradiância corresponde a 54% da maior</h3>
             </div>
-            <div style="width: 100%; background-color: #9696df;">
-                <h3>Maior irradiância entre os setores:</h3>
-                <div id="kpi_maior_irradiancia"></div>
-            </div>
-            <div style="width: 100%; background-color: #9696df;">
-                <h3>Menor irradiância entre os setores:</h3>
-                <div id="kpi_menor_irradiancia"></div>
-            </div>
-            <div style="width: 100%; background-color: #9696df;">
-                <h3>Média da geração de energia ideal de todos os setores até o momento:</h3>
-                <div id="kpi_media_geracao_ideal"></div>
+            <div style="background-color:rgb(200, 200, 253); border-color: black; width: 40%;display: flex; flex-direction: column;">
+                <div>
+                    <h3>Maior irradiância</h3>
+                    <h2>Setor 3: 968 W/m²</h2>
+                </div>
+                <div>
+                    <h3>Menor irradiância</h3>
+                    <h2>Setor 2: 789 W/m²</h2>
+                </div>
             </div>
         </div>
-        <div style="width: 100%; height: 25vh; margin-bottom: 60px;">
-            <h2>Irradiância por hora de cada setor hoje</h2>
-            <canvas id="grafico_irradiancia_hora_line"></canvas>
+        <div style="width: 33.33%; margin: 10px; background-color: #9696df;">
+            <h3>Irradiação total</h3>
+            <h2>48,04 kW/m²</h2>
+            <h3>Ontem: 39,56 kW/m²</h3>
         </div>
-        <div style="display: flex; gap: 10px; height: 25vh; margin-bottom: 60px;">
+        <div style="width: 33.33%; margin: 10px; background-color: #9696df;">
+            <h3>Sensores ativos</h3>
+            <h2>10/10</h2>
+            <h3>Problema nos sensores: nenhum</h3>
+        </div>
+    </div>
+    <div style="display: flex;">
+        <div style="width: 66.66%; display: flex; flex-direction: column;">
+            <div style="width: 100%; height: 25vh; margin-bottom: 60px;">
+                <h2>Irradiância em cada setor ao longo do dia</h2>
+                <canvas id="chart_irradiancia_setor_line"></canvas>
+            </div>
             <div style="width: 100%;">
-                <h2>Geração ideal de energia elétrica de cada setor hoje</h2>
-                <canvas id="grafico_geracao_ideal_bar"></canvas>
+                <h2>Participação da irradiância em cada setor ao longo do dia</h2>
+                <canvas id="chart_irradiancia_setor_stack"></canvas>
             </div>
-            <div style="width: 100%; margin-bottom: 60px;">
-                <h2>Participação de cada setor na geração ideal de energia elétrica hoje</h2>
-                <canvas id="grafico_geracao_ideal_pie"></canvas>
-            </div>
+        </div>
+        <div style="width: 33.3%; margin-bottom: 60px;">
+            <h2>Participação da irradiação em cada setor</h2>
+            <canvas id="chart_irradiacao_setor_pie"></canvas>
         </div>
     </div>
 </body>

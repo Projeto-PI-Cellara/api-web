@@ -1,69 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard | Cellara</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/mock_dados.js" defer></script>
     <script src="js/dashboard.js" defer></script>
-</head>
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
 
-<body>
-    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; gap: 10px;">
-        <div style="width: 100%;">
-            <h1>Dashboard - Monitoramento de Irradiância Solar</h1>
+  <body>
+    <header class="menu_lateral">
+      <div class="logo">
+        <img src="assets/img/logo_texto_light.svg" alt="" />
+      </div>
+
+      <div class="titulo">
+        <h1>Olá, <span id="nome_usuario">Fernanda!</span></h1>
+        <span>SPTech Consulting</span>
+      </div>
+      <button>Dashboard</button>
+
+      <div class="botao_sair">
+        <a href="/public/index.html">
+          <img src="assets/icons/icon_log_out.svg" alt="" />
+          <span>Sair</span>
+        </a>
+      </div>
+
+      <div class="copyright">
+        <div class="copyright_content">
+          <img src="/public/assets/icons/icon_copyright.svg" alt="" />
+          <span>Cellara 2026</span>
         </div>
-        <div style="width: 30vw;">
-            <div id="data_hora_atual"></div>
+      </div>
+    </header>
+
+    <div class="dashboard_content">
+      <div class="dashboard_cabecalho">
+        <div class="titulo">
+          <h1>Dashboard - Monitoramento de Irradiância Solar</h1>
         </div>
-    </div>
-    <div style="display: flex;">
-        <div style="width: 33.33%; display: flex; margin: 10px; background-color: #9696df;">
-            <div style="width: 60%;">
-                <h3>Diferença de irradiância entre setores</h3>
-                <h2>174 W/m²</h2>
-                <h3>Menor irradiância corresponde a 54% da maior</h3>
+
+        <div class="data_hora">
+          <div class="data_hora_content">
+            <span> <span class="descricao">Data:</span> 29/10/2026 </span>
+            <span> <span class="descricao">Hora:</span> 13h00 </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi_composta">
+          <div class="kp_diferenca">
+            <h1 class="titulo_kpi">Diferença de irradiância entre setores</h1>
+            <div class="kpi_valor">
+              <img src="assets/icons/icon_activity.svg" alt="">
+              <span>174 W/m²</span>
             </div>
-            <div style="background-color:rgb(200, 200, 253); border-color: black; width: 40%;display: flex; flex-direction: column;">
-                <div>
-                    <h3>Maior irradiância</h3>
-                    <h2>Setor 3: 968 W/m²</h2>
+            <span class="kpi_descricao">Menor irradiância corresponde a 54% da maior</span>
+          </div>
+          
+          <div class="sub_kpis">
+            <div>
+              <h1 class="titulo_kpi">Maior irradiância</h1>
+
+              <div class="sub_kpi">
+                <img src="assets/icons/icon_move_up.svg" alt="">
+                <div class="sub_kpi_content">
+                  <span>Setor 3</span>
+                  <span class="sub_kpi_valor">968 W/m²</span>
                 </div>
-                <div>
-                    <h3>Menor irradiância</h3>
-                    <h2>Setor 2: 789 W/m²</h2>
+              </div>
+            </div>
+            <div>  
+              <h1 class="titulo_kpi">Menor irradiância</h1>
+              <div class="sub_kpi">
+                <img src="assets/icons/icon_move_down.svg" alt="">
+                <div class="sub_kpi_content">
+                  <span>Setor 2</span>
+                  <span class="sub_kpi_valor">789 W/m²</span>
                 </div>
+              </div>
             </div>
-        </div>
-        <div style="width: 33.33%; margin: 10px; background-color: #9696df;">
-            <h3>Irradiação total</h3>
-            <h2>48,04 kW/m²</h2>
-            <h3>Ontem: 39,56 kW/m²</h3>
-        </div>
-        <div style="width: 33.33%; margin: 10px; background-color: #9696df;">
-            <h3>Sensores ativos</h3>
-            <h2>10/10</h2>
-            <h3>Problema nos sensores: nenhum</h3>
-        </div>
-    </div>
-    <div style="display: flex;">
-        <div style="width: 66.66%; display: flex; flex-direction: column;">
-            <div style="width: 100%; height: 25vh; margin-bottom: 60px;">
-                <h2>Irradiância em cada setor ao longo do dia</h2>
-                <canvas id="chart_irradiancia_setor_line"></canvas>
             </div>
-            <div style="width: 100%;">
-                <h2>Participação da irradiância em cada setor ao longo do dia</h2>
-                <canvas id="chart_irradiancia_setor_stack"></canvas>
-            </div>
+          </div>
+
+        <div class="kpi">
+          <h1 class="titulo_kpi">Irradiação total</h1>
+          <div class="kpi_valor">
+            <img src="assets/icons/icon_sun.svg" alt="">
+            <span>48,04 kW/m²</span class="kpi_valor">
+          </div>
+          <span class="kpi_descricao">Ontem: 39,56 kW/m²</span>
         </div>
-        <div style="width: 33.3%; margin-bottom: 60px;">
-            <h2>Participação da irradiação em cada setor</h2>
+        
+        <div class="kpi">
+          <h1 class="titulo_kpi">Sensores ativos</h1>
+          <div class="kpi_valor">
+            <img src="assets/icons/icon_radio.svg" alt="">
+            <span>10/10</span>
+          </div>
+          <span class="kpi_descricao">Problema nos sensores: nenhum</span>
+        </div>
+      </div>
+
+      <div class="graficos">
+        <div class="graficos_setor_hora">
+          <div class="irradiancia_setor_line">
+            <h3>Irradiância em cada setor</h3>
+            <canvas id="chart_irradiancia_setor_line"></canvas>
+          </div>
+          <div class="irradiancia_setor_stack">
+            <h3>Participação da irradiância em cada setor</h3>
+            <canvas id="chart_irradiancia_setor_stack"></canvas>
+          </div>
+        </div>
+        
+        <div class="grafico_participacao_setor">
+          <div class="irradiacao_setor_pie">
+            <h3>Participação da irradiação em cada setor</h3>
             <canvas id="chart_irradiacao_setor_pie"></canvas>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

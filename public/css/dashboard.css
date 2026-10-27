@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --branco: #FAFCFB;
+  --branco_gelo: #E9EBF5;
+  --amarelo_claro: #FFD700;
+  --amarelo_escuro: #D4AF37;
+  --azul_claro: #4A58A2;
+  --azul_escuro: #2B3B92;
+  --preto: #1C1C1C;
+  --azul_escuro_transparente: #2B3B92B3;
+  --preto-sombra: #00000066;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'poppins', sans-serif;
+}
+
+/* menu lateral */
+
+.menu_lateral {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--azul_escuro);
+  padding: 30px;
+  color: var(--branco);
+  gap: 50px;
+}
+
+.menu_lateral .logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.titulo h1 {
+  display: flex;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.titulo #nome_usuario {
+  color: var(--amarelo_claro);
+  font-weight: 700;
+}
+
+.titulo span {
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.menu_lateral button {
+  padding: 15px;
+  border-radius: 14px;
+  border: none;
+  background-color: var(--amarelo_claro);
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--azul_escuro);
+}
+
+.botao_sair a {
+  display: flex;
+  text-decoration: none;
+  color: var(--branco);
+  font-weight: 600;
+}
+
+.botao_sair a span {
+  margin-left: 10px;
+}
+
+.copyright {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: end;
+  gap: 5px;
+}
+
+.copyright_content {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.copyright_content span {
+  font-weight: 500;
+}
+
+.copyright_content img {
+  width: 15px;
+}
+
+/* conteúdo dashboard  */
+
+.dashboard_content {
+  display: flex;
+  flex-direction: column;
+  width: 100VW;
+  height: 100vh;
+  overflow-x: hidden;
+  padding-inline: 20px;
+}
+
+.dashboard_content .titulo {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: var(--azul_escuro);
+  font-size: 12px;
+  padding-block: 10px;
+
+}
+
+.dashboard_cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.data_hora {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  padding-block: 10px;
+}
+
+.data_hora_content {
+  text-align: end;
+}
+
+.data_hora_content .descricao {
+  font-weight: bold;
+  color: var(--azul_escuro);
+}
+
+.kpis {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--azul_escuro);
+  color: var(--branco);
+  padding: 15px;
+  border-radius: 14px;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.titulo_kpi {
+  font-size: 14px;
+}
+
+.kpi_valor {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.kpi_valor img {
+  width: 20px;
+}
+
+.kpi_descricao {
+  display: flex;
+  font-size: 12px;
+  align-items: end;
+}
+
+.kpi_composta {
+  display: flex;
+  background-color: var(--azul_escuro);
+  color: var(--branco);
+  padding: 20px;
+  border-radius: 14px;
+  gap: 20px;
+  width: 40%;
+}
+
+.kpi_diferenca {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sub_kpis {
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+}
+
+.sub_kpi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.sub_kpi_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub_kpi_valor {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* gráficos  */
+
+.graficos {
+  display: flex;
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.graficos h3 {
+  color: var(--azul_escuro);
+  padding-block: 10px;
+}
+
+.graficos_setor_hora {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.grafico_participacao_setor {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+.irradiancia_setor_line {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.irradiancia_setor_stack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.irradiacao_setor_pie {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

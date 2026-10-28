@@ -1,14 +1,3 @@
-/* DEFINIÇÃO DE VALORES */
-
-/* DEFINIÇÃO DE INFORMAÇÕES BÁSICAS */
-
-// Data e hora dos registros
-data_hora_atual.innerHTML = `
-    <h2>Data e hora dos últimos registros:</h2>
-    <h3>Data: ${dataAtual}</h3>
-    <h2>Hora: ${horaAtual}h00</h2>
-`
-
 /* FORMAÇÃO DOS GRÁFICOS */
 
 /* GRÁFICO 1: Irradiância em cada setor ao longo do dia */
@@ -88,6 +77,13 @@ new Chart(document.getElementById('chart_irradiacao_setor_pie'), {
                 '#ff00ff',
             ],
             hoverOffset: 4
-        }]
+        }],
     },
+    options: {
+      plugins: {
+        legend: {
+          position: 'bottom',
+        }
+      }
+    }
 });

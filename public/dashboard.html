@@ -52,54 +52,53 @@
       </div>
 
       <div class="kpis">
-        <div class="kpi_composta">
-          <div class="kp_diferenca">
-            <h1 class="titulo_kpi">Diferença de irradiância entre setores</h1>
-            <div class="kpi_valor">
-              <img src="assets/icons/icon_activity.svg" alt="">
-              <span>174 W/m²</span>
-            </div>
-            <span class="kpi_descricao">Menor irradiância corresponde a 54% da maior</span>
+        <div class="kpi">
+          <h1 class="titulo_kpi">Diferença de irradiância</h1>
+          <div class="kpi_valor">
+            <img src="assets/icons/icon_activity.svg" alt="" />
+            <span>174 W/m²</span>
+            <span class="kpi_descricao">entre setores</span>
           </div>
-          
-          <div class="sub_kpis">
-            <div>
-              <h1 class="titulo_kpi">Maior irradiância</h1>
+          <span class="kpi_descricao">
+            Menor irradiância = 54% da maior
+          </span>
+        </div>
 
-              <div class="sub_kpi">
-                <img src="assets/icons/icon_move_up.svg" alt="">
-                <div class="sub_kpi_content">
-                  <span>Setor 3</span>
-                  <span class="sub_kpi_valor">968 W/m²</span>
-                </div>
-              </div>
-            </div>
-            <div>  
-              <h1 class="titulo_kpi">Menor irradiância</h1>
-              <div class="sub_kpi">
-                <img src="assets/icons/icon_move_down.svg" alt="">
-                <div class="sub_kpi_content">
-                  <span>Setor 2</span>
-                  <span class="sub_kpi_valor">789 W/m²</span>
-                </div>
-              </div>
-            </div>
+        <div class="kpi">
+          <h1 class="titulo_kpi">Maior irradiância</h1>
+          <div class="kpi_content">
+            <img src="assets/icons/icon_move_up.svg" alt="" />
+            <div class="kpi_sub_valor">
+              <h4>Setor 3</h4>
+              <span class="kpi_valor">968 W/m²</span>
             </div>
           </div>
+        </div>
+
+        <div class="kpi">
+          <h1 class="titulo_kpi">Menor irradiância</h1>
+          <div class="kpi_content">
+            <img src="assets/icons/icon_move_down.svg" alt="" />
+            <div class="kpi_sub_valor">
+              <h4>Setor 2</h4>
+              <span class="kpi_valor">789 W/m²</span>
+            </div>
+          </div>
+        </div>
 
         <div class="kpi">
           <h1 class="titulo_kpi">Irradiação total</h1>
           <div class="kpi_valor">
-            <img src="assets/icons/icon_sun.svg" alt="">
-            <span>48,04 kW/m²</span class="kpi_valor">
+            <img src="assets/icons/icon_sun.svg" alt="" />
+            <span class="kpi_valor">48,04 kW/m²</span>
           </div>
           <span class="kpi_descricao">Ontem: 39,56 kW/m²</span>
         </div>
-        
+
         <div class="kpi">
           <h1 class="titulo_kpi">Sensores ativos</h1>
           <div class="kpi_valor">
-            <img src="assets/icons/icon_radio.svg" alt="">
+            <img src="assets/icons/icon_radio.svg" alt="" />
             <span>10/10</span>
           </div>
           <span class="kpi_descricao">Problema nos sensores: nenhum</span>
@@ -117,7 +116,7 @@
             <canvas id="chart_irradiancia_setor_stack"></canvas>
           </div>
         </div>
-        
+
         <div class="grafico_participacao_setor">
           <div class="irradiacao_setor_pie">
             <h3>Participação da irradiação em cada setor</h3>

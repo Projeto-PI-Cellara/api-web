@@ -1,7 +1,3 @@
-// Última data e hora lida
-const dataAtual = "17/10/2026"
-const horaAtual = 13 // corresponde a 1h da tarde
-
 // Últimos 16 registros de irradiância no setor 2
 const irradianciaHoraSetor1 = [
     900,

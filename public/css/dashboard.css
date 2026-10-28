@@ -110,6 +110,32 @@ body {
 
 /* conteúdo dashboard  */
 
+.dashboard_cabecalho {
+  display: flex;
+  width: 100%;
+  gap: 10%;
+  justify-content: end;
+  align-items: center;
+  padding-block: 10px;
+}
+
+.dashboard_cabecalho .titulo h1{
+  color: var(--azul_escuro);
+  font-size: 25px;
+}
+
+.data_hora {
+  display: flex;
+  flex-direction: column;
+  padding-block: 10px;
+  justify-content: end;
+}
+
+.data_hora_content .descricao {
+  font-weight: bold;
+  color: var(--azul_escuro);
+}
+
 .dashboard_content {
   display: flex;
   flex-direction: column;
@@ -117,39 +143,6 @@ body {
   height: 100vh;
   overflow-x: hidden;
   padding-inline: 20px;
-}
-
-.dashboard_content .titulo {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: var(--azul_escuro);
-  font-size: 12px;
-  padding-block: 10px;
-
-}
-
-.dashboard_cabecalho {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.data_hora {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: end;
-  padding-block: 10px;
-}
-
-.data_hora_content {
-  text-align: end;
-}
-
-.data_hora_content .descricao {
-  font-weight: bold;
-  color: var(--azul_escuro);
 }
 
 .kpis {
@@ -167,10 +160,12 @@ body {
   border-radius: 14px;
   gap: 10px;
   margin-top: 10px;
+  width: 100%;
 }
 
 .titulo_kpi {
   font-size: 14px;
+  text-align: center;
 }
 
 .kpi_valor {
@@ -178,56 +173,37 @@ body {
   gap: 10px;
   font-size: 20px;
   font-weight: bold;
+  justify-content: center;
+  align-items: center;
 }
 
 .kpi_valor img {
-  width: 20px;
+  width: 25px;
 }
 
 .kpi_descricao {
   display: flex;
-  font-size: 12px;
+  font-size: 13px;
   align-items: end;
-}
-
-.kpi_composta {
-  display: flex;
-  background-color: var(--azul_escuro);
-  color: var(--branco);
-  padding: 20px;
-  border-radius: 14px;
-  gap: 20px;
-  width: 40%;
-}
-
-.kpi_diferenca {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.sub_kpis {
-  display: flex;
-  justify-content: start;
-  gap: 20px;
-}
-
-.sub_kpi {
-  display: flex;
+  font-weight: 500;
   justify-content: center;
-  align-items: center;
-  gap: 5px;
 }
 
-.sub_kpi_content {
+.kpi_content {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.kpi_content img {
+  width: 30px;
+}
+
+.kpi_sub_valor { 
   display: flex;
   flex-direction: column;
 }
 
-.sub_kpi_valor {
-  font-size: 15px;
-  font-weight: bold;
-}
 
 /* gráficos  */
 

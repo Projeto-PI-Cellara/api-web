@@ -1,17 +1,19 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | Cellara</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/mock_dados.js" defer></script>
-    <script src="js/dashboard.js" defer></script>
-    <link rel="stylesheet" href="css/dashboard.css" />
-  </head>
 
-  <body>
-    <header class="menu_lateral">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Cellara</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/mock_dados.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+
+<body>
+  <header class="menu_lateral">
+    <div class="menu-superior">
       <div class="logo">
         <img src="assets/img/logo_texto_light.svg" alt="" />
       </div>
@@ -21,9 +23,11 @@
         <span>SPTech Consulting</span>
       </div>
       <button>Dashboard</button>
+    </div>
 
+    <div class="menu-inferior">
       <div class="botao_sair">
-        <a href="/public/index.html">
+        <a href="index.html">
           <img src="assets/icons/icon_log_out.svg" alt="" />
           <span>Sair</span>
         </a>
@@ -31,99 +35,100 @@
 
       <div class="copyright">
         <div class="copyright_content">
-          <img src="/public/assets/icons/icon_copyright.svg" alt="" />
-          <span>Cellara 2026</span>
-        </div>
-      </div>
-    </header>
-
-    <div class="dashboard_content">
-      <div class="dashboard_cabecalho">
-        <div class="titulo">
-          <h1>Dashboard - Monitoramento de Irradiância Solar</h1>
-        </div>
-
-        <div class="data_hora">
-          <div class="data_hora_content">
-            <span> <span class="descricao">Data:</span> 29/10/2026 </span>
-            <span> <span class="descricao">Hora:</span> 13h00 </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="kpis">
-        <div class="kpi">
-          <h1 class="titulo_kpi">Diferença de irradiância</h1>
-          <div class="kpi_valor">
-            <img src="assets/icons/icon_activity.svg" alt="" />
-            <span>174 W/m²</span>
-            <span class="kpi_descricao">entre setores</span>
-          </div>
-          <span class="kpi_descricao">
-            Menor irradiância = 54% da maior
-          </span>
-        </div>
-
-        <div class="kpi">
-          <h1 class="titulo_kpi">Maior irradiância</h1>
-          <div class="kpi_content">
-            <img src="assets/icons/icon_move_up.svg" alt="" />
-            <div class="kpi_sub_valor">
-              <h4>Setor 3</h4>
-              <span class="kpi_valor">968 W/m²</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="kpi">
-          <h1 class="titulo_kpi">Menor irradiância</h1>
-          <div class="kpi_content">
-            <img src="assets/icons/icon_move_down.svg" alt="" />
-            <div class="kpi_sub_valor">
-              <h4>Setor 2</h4>
-              <span class="kpi_valor">789 W/m²</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="kpi">
-          <h1 class="titulo_kpi">Irradiação total</h1>
-          <div class="kpi_valor">
-            <img src="assets/icons/icon_sun.svg" alt="" />
-            <span class="kpi_valor">48,04 kW/m²</span>
-          </div>
-          <span class="kpi_descricao">Ontem: 39,56 kW/m²</span>
-        </div>
-
-        <div class="kpi">
-          <h1 class="titulo_kpi">Sensores ativos</h1>
-          <div class="kpi_valor">
-            <img src="assets/icons/icon_radio.svg" alt="" />
-            <span>10/10</span>
-          </div>
-          <span class="kpi_descricao">Problema nos sensores: nenhum</span>
-        </div>
-      </div>
-
-      <div class="graficos">
-        <div class="graficos_setor_hora">
-          <div class="irradiancia_setor_line">
-            <h3>Irradiância em cada setor</h3>
-            <canvas id="chart_irradiancia_setor_line"></canvas>
-          </div>
-          <div class="irradiancia_setor_stack">
-            <h3>Participação da irradiância em cada setor</h3>
-            <canvas id="chart_irradiancia_setor_stack"></canvas>
-          </div>
-        </div>
-
-        <div class="grafico_participacao_setor">
-          <div class="irradiacao_setor_pie">
-            <h3>Participação da irradiação em cada setor</h3>
-            <canvas id="chart_irradiacao_setor_pie"></canvas>
-          </div>
+          <span>© Cellara, 2026</span>
         </div>
       </div>
     </div>
-  </body>
+  </header>
+
+  <div class="dashboard_content">
+    <div class="dashboard_cabecalho">
+      <div class="titulo">
+        <h1>Dashboard - Monitoramento de Irradiância Solar</h1>
+      </div>
+
+      <div class="data_hora">
+        <div class="data_hora_content">
+          <span> <span class="descricao">Data:</span> 29/10/2026 </span>
+          <span> <span class="descricao">Hora:</span> 13h00 </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi">
+        <h1 class="titulo_kpi">Diferença de irradiância</h1>
+        <div class="kpi_valor">
+          <img src="assets/icons/icon_activity.svg" alt="" />
+          <span>174 W/m²</span>
+          <span class="kpi_descricao">entre setores</span>
+        </div>
+        <span class="kpi_descricao">
+          Menor irradiância = 54% da maior
+        </span>
+      </div>
+
+      <div class="kpi">
+        <h1 class="titulo_kpi">Maior irradiância</h1>
+        <div class="kpi_content">
+          <img src="assets/icons/icon_move_up.svg" alt="" />
+          <div class="kpi_sub_valor">
+            <h4>Setor 3</h4>
+            <span class="kpi_valor">968 W/m²</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi">
+        <h1 class="titulo_kpi">Menor irradiância</h1>
+        <div class="kpi_content">
+          <img src="assets/icons/icon_move_down.svg" alt="" />
+          <div class="kpi_sub_valor">
+            <h4>Setor 2</h4>
+            <span class="kpi_valor">789 W/m²</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi">
+        <h1 class="titulo_kpi">Irradiação total</h1>
+        <div class="kpi_valor">
+          <img src="assets/icons/icon_sun.svg" alt="" />
+          <span class="kpi_valor">48,04 kW/m²</span>
+        </div>
+        <span class="kpi_descricao">Ontem: 39,56 kW/m²</span>
+      </div>
+
+      <div class="kpi">
+        <h1 class="titulo_kpi">Sensores ativos</h1>
+        <div class="kpi_valor">
+          <img src="assets/icons/icon_radio.svg" alt="" />
+          <span>10/10</span>
+        </div>
+        <span class="kpi_descricao">Problema nos sensores: nenhum</span>
+      </div>
+    </div>
+
+    <div class="graficos">
+      <div class="graficos_setor_hora">
+        <div class="irradiancia_setor_line">
+          <h3>Irradiância em cada setor</h3>
+          <canvas id="chart_irradiancia_setor_line"></canvas>
+        </div>
+        <div class="irradiancia_setor_stack">
+          <h3>Participação da irradiância em cada setor</h3>
+          <canvas id="chart_irradiancia_setor_stack"></canvas>
+        </div>
+      </div>
+
+      <div class="grafico_participacao_setor">
+        <div class="irradiacao_setor_pie">
+          <h3>Participação da irradiação em cada setor</h3>
+          <canvas id="chart_irradiacao_setor_pie"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

@@ -13,7 +13,10 @@ new Chart(document.getElementById('chart_irradiancia_setor_line'), {
             { label: 'Setor 5', data: [5, 95, 235, 420, 620, 790, 870, 900, 880, 850], backgroundColor: '#ff79ff', borderColor: '#ff00ff', tension: 0.3 }
         ]
     },
-    options: {}
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
 });
 
 /* GRÁFICO 2: Geração ideal de energia elétrica de cada setor hoje (colunas) */
@@ -30,6 +33,8 @@ new Chart(document.getElementById('chart_irradiancia_setor_stack'), {
         ]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
         scales: {
             y: {

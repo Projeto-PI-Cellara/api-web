@@ -1,5 +1,5 @@
 <p>
-  <img src="public/assets/img/logo_texto_light.png" alt="Logo Cellara" width="180"/>
+  <img src="public/assets/svg/logo_light.svg" alt="Logo Cellara" width="180"/>
 </p>
 
 
@@ -14,18 +14,17 @@ Monitoramento de luminosidade em painéis solares.
 
 ##  Sobre o projeto
 
-A geração de energia em painéis fotovoltaicos é impactada por fatores como irradiância, temperatura e, principalmente, acúmulo de sujeira — que pode reduzir significativamente a potência gerada em relação à nominal. O problema não é a falta de tecnologia, mas a ausência de dados de referência sobre a incidência de luz.
+A geração de energia em painéis fotovoltaicos é impactada por fatores como irradiância, temperatura e, principalmente, acúmulo de sujeira, que pode reduzir significativamente a potência gerada em relação à nominal. O problema não é a falta de tecnologia, mas a ausência de dados de referência sobre a incidência de luz.
 
-A **Cellara** propõe um protótipo de baixo custo que utiliza um sensor LDR acoplado a um Arduino Uno para monitorar continuamente a luminosidade incidente sobre os painéis, estimando a energia que poderia ser gerada naquele cenário. A partir dessa estimativa, caso deseje, o cliente poderá, inclusive, comparar essa informação com os dados reais de energia gerada, podendo evidenciar desvios de desempenho associados ao sombreamento, sujidade ou até mesmo falhas técnicas, atentando-se sobre a necessidade de limpeza ou manutenção antes que a perda se torne significativa.
+A **Cellara** propõe um protótipo de baixo custo que utiliza um sensor LDR acoplado a um Arduino Uno para monitorar continuamente a luminosidade incidente sobre os painéis, servindo de referência para o gestor da usina. A partir dessa estimativa, caso deseje, o cliente poderá comparar essa informação com os dados reais de energia gerada, podendo evidenciar desvios de desempenho associados ao sombreamento, sujidade ou até mesmo falhas técnicas, atentando-se sobre a necessidade de limpeza ou manutenção antes que a perda se torne significativa.
 
 ##  Objetivos
 
 - Captar continuamente a luminosidade incidente sobre os painéis via sensor LDR e Arduino Uno;
 
-- Disponibilizar os resultados em uma aplicação web com dashboards;
+- Disponibilizar os resultados em uma aplicação web com dashboard.
 
-
-##  Módulos previstos
+- Oferecer análise da irradiância estimada ao longo de determinado período, para comparação entre períodos e entre setores da usina.
 
 
 
@@ -33,7 +32,7 @@ A **Cellara** propõe um protótipo de baixo custo que utiliza um sensor LDR aco
 
 ##  Status do projeto
 
- **Em desenvolvimento.** Este é um projeto acadêmico. Ainda não há funcionamento completo, testes ou guia de instalação — este README será atualizado conforme o projeto avançar.
+ **Em desenvolvimento.** Este é um projeto acadêmico. Ainda não há funcionamento completo, testes ou guia de instalação.
 
 
 

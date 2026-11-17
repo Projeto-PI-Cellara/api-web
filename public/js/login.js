@@ -1,26 +1,70 @@
-function login() {
-    let emailLogin = ipt_email_login.value;
-    let senhaLogin = ipt_senha_login.value;
 
-    let erro = false;
 
-    if (emailLogin == "" || !emailLogin.includes("@")) {
-        alert("E-mail inválido! O e-mail deve conter pelo menos um '@'.");
-        erro = true;
-    } else if (senhaLogin == "") {
-        alert("A senha está vazia");
-        erro = true;
-    }
+    function login() {
+        // aguardar();
 
-    if (!erro) {
-        let emailMock = "fernanda@sptech.school";
-        let senhaMock = "123456789";
+        var emailVar = ipt_email_login.value;
+        var senhaVar = ipt_senha_login.value;
 
-        if (emailLogin == emailMock && senhaLogin == senhaMock) {
-            alert("Login realizado com sucesso!");
-            window.location.href = "dashboard.html";
-        } else {
-            alert("E-mail ou senha incorretos.");
+        if (emailVar == "" || senhaVar == "") {
+           alert("Mensagem de erro para todos os campos em branco");
+            
+            return false;
         }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "./dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
-}
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+

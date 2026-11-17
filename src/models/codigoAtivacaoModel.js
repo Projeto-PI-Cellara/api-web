@@ -9,6 +9,16 @@ function registrar(valor, duracao, fkEmpresa, fkCriador) {
     return database.executar(instrucaoSql)
 }
 
+function expirar(id) {
+    const instrucaoSql = `
+    DELETE FROM codigo_ativacao
+    WHERE id = ${id};
+    `
+
+    return database.executar(instrucaoSql)
+}
+
 module.exports = {
-    registrar
+    registrar,
+    expirar
 };

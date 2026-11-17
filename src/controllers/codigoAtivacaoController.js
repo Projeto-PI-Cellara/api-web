@@ -7,10 +7,22 @@ function registrar(req, res) {
     const fkCriador = req.body.fkCriador;
 
     codigoAtivacaoModel.registrar(valor, duracao, fkEmpresa, fkCriador).then((resultado) => {
-        res.status(201).json(resultado);
+        res.status(201).json({
+            id: resultado.insertId,
+            valor: valor
+        });
     });
 }
 
+function expirar(req, res) {
+    const id = req.params.id;
+
+    codigoAtivacaoModel.expirar(id).then((resultado) => {
+        res.status(204).json(resultado);
+    })
+}
+
 module.exports = {
-    registrar
+    registrar,
+    expirar
 };

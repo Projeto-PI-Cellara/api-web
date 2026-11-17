@@ -1,4 +1,4 @@
-const duracao = 600000
+const duracao = 10000
 
 function gerarCodigoAtivacao() {
     const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -13,7 +13,7 @@ function gerarCodigoAtivacao() {
     const idEmpresa = sessionStorage.ID_EMPRESA
     const idPessoa = sessionStorage.ID_PESSOA
     // const isAdmin = sessionStorage.IS_ADMIN
-
+    let id
 
     fetch("/codigosAtivacao/registrar", {
         method: "POST",
@@ -27,4 +27,21 @@ function gerarCodigoAtivacao() {
             fkCriador: idPessoa
         }),
     })
+    .then(function (resposta) {
+        return resposta.json()
+    })
+    .then( function (resposta) {
+        console.log("Esse é o id:")
+        id = resposta.id
+        console.log(id)
+        setTimeout(()=>{
+            fetch(`/codigosAtivacao/expirar/${id}`, {
+                method: "DELETE"
+            })
+        }, duracao)
+        console.log("código expirado")
+    }
+    )
+
+
 }

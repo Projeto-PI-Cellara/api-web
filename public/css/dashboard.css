@@ -8,8 +8,16 @@
   --azul_claro: #4A58A2;
   --azul_escuro: #2B3B92;
   --preto: #1C1C1C;
+
+  --vermelho_luta: #D7261E;
+  --vermelho_vida: #5A0F0F;
+  --azul_noite: #0A1030;
   --azul_escuro_transparente: #2B3B92B3;
   --preto-sombra: #00000066;
+  --preto_80: #000000CC; /* 80% de opacidade */
+  --cinza_50: #5D5D5DCC;
+  --cinza: #8A96BA;
+  --branco_translucido: #FAFCFB40;
 }
 
 * {
@@ -279,4 +287,38 @@ body {
   background-color: var(--branco);
   padding: 30px 100px;
   border-radius: 30px;
+}
+
+/*Página codigo ativação*/
+
+.secao_codigo_ativacao{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.codigo_gerado{
+  display: flex;
+  width: 100%;
+  border: solid 2px var(--amarelo_claro);
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  min-height: 6vh;
+  transition: all 0.3s ease-in-out;
+}
+
+.card_formulario{
+  display: flex;
+  border: solid 2px var(--amarelo_claro);
+  box-shadow: 10px 10px var(--azul_claro);
+}
+
+.codigo_gerado:hover{
+  transform: scale(1.03);
+  cursor: pointer;
 }

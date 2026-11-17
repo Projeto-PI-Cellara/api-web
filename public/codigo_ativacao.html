@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Cellara</title>
+    <link rel="shortcut icon" href="assets/svg/logo_small_light.svg" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/mock_dados.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+    <script src="./js/codigo_ativacao.js"></script>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/formulario.css">
+</head>
+
+<body>
+    <header class="menu_lateral">
+        <div class="menu-superior">
+            <div class="logo">
+                <img src="assets/svg/logo_light.svg" alt="" />
+            </div>
+
+            <div class="titulo">
+                <h1>Olá, <span id="nome_usuario">Fernanda!</span></h1>
+                <span>Green Energy</span>
+            </div>
+            <button>Dashboard</button>
+        </div>
+
+        <div class="menu-inferior">
+            <div class="botao_sair">
+                <a href="index.html">
+                    <img src="assets/icons/icon_log_out.svg" alt="" />
+                    <span>Sair</span>
+                </a>
+            </div>
+
+            <div class="copyright">
+                <div class="copyright_content">
+                    <span>© Cellara, 2026</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard_content">
+        <div class="dashboard_cabecalho">
+            <div class="titulo">
+                <h1>Dashboard - Monitoramento de Irradiância Solar</h1>
+            </div>
+
+            <div class="data_hora">
+                <div class="data_hora_content">
+                    <span> <span class="descricao">Data:</span> 29/10/2026 </span>
+                    <span> <span class="descricao">Hora:</span> 13h00 </span>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="secao_codigo_ativacao">
+            <div class="card_formulario">
+                <div class="etiqueta">CLIQUE PARA COPIAR</div>
+                <h2>Código de ativação</h2>
+                <button onclick="gerarCodigoAtivacao()" class="botao_final_formulario">Gerar</button>
+                <div class="codigo_gerado">
+                    <p id="exibir">------</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

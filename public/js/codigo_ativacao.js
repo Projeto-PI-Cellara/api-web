@@ -27,6 +27,4 @@ function gerarCodigoAtivacao() {
             fkCriador: idPessoa
         }),
     })
-
-    
 }

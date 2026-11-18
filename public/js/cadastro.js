@@ -28,20 +28,33 @@ function cadastrar() {
             ("Mensagem de erro para todos os campos em branco");
 
         return false;
-    } 
+    }
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    // for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-    //   if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-    //     idEmpresaVincular = listaEmpresasCadastradas[i].id
-    //     console.log("Código de ativação válido.");
-    //     break;
-    //   } else {
-    //     cardErro.style.display = "block";
-    //     mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-    //     finalizarAguardar();
-    //   }
-    // }
+
+    fetch("/codigosAtivacao/buscar", {
+        method: "GET",
+    })
+        .then(function (resposta) {
+            resposta.json().then((codigosAtivacao) => {
+                codigosAtivacao.forEach((codigoAtivacao) => {
+                // listaCodigosAtivacao.push(codigoAtivacao);
+                if (codigoAtivacao.valor == codigoVar) {
+                    const id = codigoAtivacao.id
+                    fetch(`/codigosAtivacao/usar/${id}`, {
+                        method: "PUT",
+                        headers: {"Content-Type": "application/json",},
+                        body: JSON.stringify({
+                            ativoServer: false
+                        })
+                    })
+                }
+                });
+            });
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
 
 
     // Enviando o valor da nova input
@@ -56,15 +69,15 @@ function cadastrar() {
             nomeServer: nomeVar,
             cpfServer: cpfVar,
             emailServer: emailVar,
-             senhaServer: senhaVar/*,
-             idEmpresaVincularServer: idEmpresaVincular*/
+            senhaServer: senhaVar/*,
+            idEmpresaVincularServer: idEmpresaVincular*/
         }),
     })
         .then(function (resposta) {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                
+
                 alert(
                     "Cadastro realizado com sucesso! Redirecionando para tela de Login...");
 
@@ -74,13 +87,13 @@ function cadastrar() {
         })
         .catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-        
+
         });
 
     return false;
 }
 
-// Listando empresas cadastradas 
+// Listando empresas cadastradas
 // function listar() {
 //     fetch("/empresas/listar", {
 //         method: "GET",

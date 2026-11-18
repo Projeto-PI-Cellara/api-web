@@ -1,4 +1,4 @@
-const duracao = 10000
+const duracao = 600000
 
 function gerarCodigoAtivacao() {
     const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

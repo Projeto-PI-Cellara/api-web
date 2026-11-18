@@ -22,7 +22,22 @@ function expirar(req, res) {
     })
 }
 
+function buscar(req, res) {
+    codigoAtivacaoModel.buscar().then((resultado) => {
+        res.status(200).json(resultado);
+    })
+}
+
+function usar(req, res) {
+    const id = req.params.id
+    codigoAtivacaoModel.usar(id).then((resultado) => {
+        res.status(201).json(resultado);
+    })
+}
+
 module.exports = {
     registrar,
-    expirar
+    expirar,
+    buscar,
+    usar
 };
